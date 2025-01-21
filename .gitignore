@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.zip
+weather_app.py
+weather_dashboard.py
+nohup.out
