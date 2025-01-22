@@ -83,7 +83,8 @@ class WeatherDashboard:
 
 # Initialize Dash app with Font Awesome stylesheet
 external_stylesheets = ["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"]
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets, title="Darko's Weather Widget")
+server = app.server  # This line ensures the server attribute is set correctly
 dashboard = WeatherDashboard()
 popular_cities = ["Accra", "Kumasi", "Tamale", "Takoradi", "Cape Coast"]
 
@@ -182,4 +183,4 @@ def update_last_updated_time(n_intervals, n_clicks):
     return f"Last updated: {current_time}"
 
 if __name__ == "__main__":
-    app.run_server(debug=True,  host='0.0.0.0', port=80)
+    app.run_server(debug=True, host='0.0.0.0', port=8099)
